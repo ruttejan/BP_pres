@@ -1,0 +1,111 @@
+---
+title: "From EigenTrust to SHAPE-Trust"
+author: "Author: Jan Rutterle"
+
+format:
+    revealjs:
+        theme: [white, styles.scss]
+        transition: slide
+        html-math-method: mathjax    
+        slide-number: c/t
+        chalkboard: true     
+        logo: CVUT-LOGO.jpg
+---
+
+
+
+# Motivation
+<!-- Add encouted to the html -->
+<!-- Add supervisor to the html -->
+
+::: {.columns}
+
+::: {.column}
+- Trust in P2P networks 
+  - Malicious attacks
+  
+:::
+
+::: {.column}
+
+![](p2p.jpg){.p2p-img}
+
+:::
+
+:::
+
+
+# Assignment
+
+1. Implementation of the algorithms in Julia
+2. Experiments for comparison of the algorithms
+3. SHAPE-Trust characteristics
+
+# EigenTrust
+
+- aggregation of opinions
+- stationary distribution / eigenvector ($\lambda = 1$)
+
+$$ t_{ik} = \sum_{j} c_{ij}c_{jk} $$
+$$ \vec{t} = (C^T)^2\vec{c_i} \dots \vec{t} = (C^T)^n\vec{c_i} $$
+
+# MaxTrust
+
+- Max-Plus algebra
+- Eigenmode
+
+$$ A \otimes (\eta^{\otimes^k} \otimes v) = \eta \otimes (\eta^{\otimes^k} \otimes v) $$ 
+
+# SHAPE-Trust
+
+- Coalitional game theory
+- Shapley value
+
+$$ v_{\mathcal{G}}(S) = \sum_{\substack{i,j\in S \\ (i,j)\in E}} a_{ij} \space + \space \sum_{j \in S^*} \underset{\substack{i\notin S \\ (i,j)\in E}}{\min} a_{ij}, \hspace{2cm} S \subseteq N$$
+
+# Experiments
+
+::: {.columns}
+
+::: {.column}
+![](exp1.png){width="80%"}
+![](exp2.png){width="80%"}
+:::
+::: {.column}
+![](exp3.png){width="80%"}
+![](exp4.png){width="80%"}
+:::
+
+:::
+
+
+# Conclusion
+
+This thesis:
+
+  - Implemented all algorithms in Julia 
+  - Compared all algorithms on specific instances
+  
+Future research:
+
+  - Distributed version of SHAPE-Trust
+  - Experiments with real data
+
+
+# Thank You For Your Attention {.thanks}
+
+# Reviewer's Question 1 {.thanks}
+
+Figure 1.5: Algorithm 2: There is a parameter “a” in the algorithm, which represents the convex combination of
+two vectors. What value is chosen for “a” in the thesis?
+
+# Reviewer's Question 2 {.thanks}
+
+Do you have any idea about the difference between time complexity of both methods?
+
+# Reviewer's Question 3 {.thanks}
+
+Table 4.2: According to the graph in Figure 4.5, peer-2 and peer-4 are assigned the same value 0.0, although the
+author presents the ordering as 3. And 4., respectively. Such an ordering supports the claim that “all algorithms
+rated the peers appropriately”. My question is why did the author choose this ordering, despite the values being
+the same?

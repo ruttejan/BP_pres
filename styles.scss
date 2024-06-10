@@ -1,0 +1,34 @@
+
+/*-- scss:rules --*/
+.body {
+    font-size: 20px;
+}
+
+.thanks{
+    font-size: 30px;
+    margin-left: 5%;
+}
+
+.p2p-img{
+    border-radius: 10%;
+}
+
+//Slide numbers to the bottom-left
+.slide-number, .reveal.has-logo .slide-number {
+    bottom: 14px !important;
+    right: 1% !important;
+    top: unset !important;
+    color: #777777 !important;
+    font-size: medium;
+}
+
+.slide-logo {
+display: block !important;
+position: fixed !important;
+top: 0 !important;
+right: 1% !important;
+max-height: 15% !important;
+height: 100% !important;
+width: auto !important;
+color: $body-color !important;
+}
