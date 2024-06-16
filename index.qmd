@@ -24,11 +24,30 @@ format:
 - Trust in P2P networks 
   - Malicious attacks
   
+```{dot}
+//| fig-width: 3
+//| fig-height: 3
+digraph {
+    layout=neato
+    {
+        node [shape=circle width=0.1 margin=0]
+        "i"
+        "j"
+    }
+    "i" -> "j" [
+        arrowsize=0.5 
+        label=<<FONT POINT-SIZE="10"><TABLE BORDER="0" CELLBORDER="0" CELLPADDING="0"><TR><TD>c<SUB>ij</SUB></TD></TR></TABLE></FONT>>
+    ]
+}
+
+```
 :::
 
 ::: {.column}
 
 ![](p2p.jpg){.p2p-img}
+
+
 
 :::
 
@@ -52,6 +71,9 @@ $$ \vec{t} = (C^T)^2\vec{c_i} \dots \vec{t} = (C^T)^n\vec{c_i} $$
 # MaxTrust
 
 - Max-Plus algebra
+  
+$$ (+, \cdot ) \to (\oplus, \otimes) = (max, +) $$
+
 - Eigenmode
 
 $$ A \otimes (\eta^{\otimes^k} \otimes v) = \eta \otimes (\eta^{\otimes^k} \otimes v) $$ 
@@ -61,19 +83,19 @@ $$ A \otimes (\eta^{\otimes^k} \otimes v) = \eta \otimes (\eta^{\otimes^k} \otim
 - Coalitional game theory
 - Shapley value
 
-$$ v_{\mathcal{G}}(S) = \sum_{\substack{i,j\in S \\ (i,j)\in E}} a_{ij} \space + \space \sum_{j \in S^*} \underset{\substack{i\notin S \\ (i,j)\in E}}{\min} a_{ij}, \hspace{2cm} S \subseteq N$$
+$$ v_{\mathcal{G}}(S) = \sum_{\substack{i,j\in S \\ (i,j)\in E}} c_{ij} \space + \space \sum_{j \in S^*} \underset{\substack{i\notin S \\ (i,j)\in E}}{\min} c_{ij}, \hspace{2cm} S \subseteq N$$
 
 # Experiments
 
 ::: {.columns}
 
 ::: {.column}
-![](exp1.png){width="80%"}
-![](exp2.png){width="80%"}
+![](exp1.png){width="70%"}
+![](exp2.png){width="70%"}
 :::
 ::: {.column}
-![](exp3.png){width="80%"}
-![](exp4.png){width="80%"}
+![](exp3.png){width="70%"}
+![](exp4.png){width="70%"}
 :::
 
 :::
@@ -88,7 +110,6 @@ This thesis:
   
 Future research:
 
-  - Distributed version of SHAPE-Trust
   - Experiments with real data
 
 
